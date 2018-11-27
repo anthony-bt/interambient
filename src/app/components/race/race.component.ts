@@ -1,3 +1,5 @@
+import { RacingService } from 'src/app/services/racing.service';
+import { FilterPoniesPipe } from './../../pipes/filter-ponies.pipe';
 import { Component, OnInit, Input } from '@angular/core';
 import { Poney } from 'src/app/interfaces/poney';
 import { Race } from 'src/app/interfaces/race';
@@ -9,15 +11,25 @@ import { Race } from 'src/app/interfaces/race';
 })
 export class RaceComponent implements OnInit {
 
-  constructor() { }
+  @Input() race: Race
+
+  constructor(
+    private filterPoniesPipe: FilterPoniesPipe,
+    private racingService: RacingService
+  ) { }
 
   ngOnInit() {
+    this.ponies = this.racingService.ponies
   }
 
   handleWin(poney: Poney) {
     console.log('WINNER : ', poney.name)
   }
 
-  @Input() race: Race
+  listPonies() {
+    console.log(this.filterPoniesPipe.transform(this.ponies, this.race.poneyIds))
+  }
+
+  ponies: Poney[] = []
 
 }

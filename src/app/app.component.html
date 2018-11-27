@@ -1,8 +1,9 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
+
+<mat-toolbar color="primary" [class.mat-elevation-z3]="true">
+  Welcome to {{ title }}!
+</mat-toolbar>
+
+<button mat-button>Home</button>
+<button mat-button>Page 2</button>
 
 <amb-race *ngFor="let race of races" [race]="race"></amb-race>

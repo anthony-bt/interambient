@@ -1,6 +1,6 @@
-<div [ngStyle]="{left: poney.distance + '%'}" (click)="handleClick()" class="container">
-  <img [src]="poney.img" />
+<mat-card [style.left]="poney.distance | percent" class="container">
+  <img #poneyImg [src]="poney.img" />
   <p>
-    {{ poney.name }}
+    {{ poney.name | uppercase }}
   </p>
-</div>
+</mat-card>
