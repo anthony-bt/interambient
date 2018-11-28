@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CreateRaceComponent } from './components/create-race/create-race.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     MaterialModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     FilterPoniesPipe

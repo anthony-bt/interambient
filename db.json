@@ -3,12 +3,26 @@
     {
       "id": 0,
       "name": "Tokyo",
-      "poneyIds": [1, 2]
+      "poneyIds": [
+        1,
+        2
+      ]
     },
     {
       "id": 1,
       "name": "Madrid",
-      "poneyIds": [0, 1]
+      "poneyIds": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "Madagascar",
+      "poneyIds": [
+        0,
+        1
+      ],
+      "id": 2
     }
   ],
   "ponies": [

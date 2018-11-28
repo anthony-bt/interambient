@@ -1,24 +1,30 @@
 
-<form>
+<form [formGroup]="raceForm" (submit)="handleSubmit()">
 
   <br />
 
   <mat-form-field>
-    <input matInput placeholder="Name">
+    <input formControlName="name" name="name" matInput placeholder="Name">
+    <mat-error *ngIf="raceForm.controls.name.hasError('required')">
+      This field is required
+    </mat-error>
   </mat-form-field>
 
   <br />
 
   <mat-form-field>
-    <mat-select placeholder="Ponies" multiple>
+    <mat-select formControlName="poneyIds" placeholder="Ponies" multiple>
       <mat-option [value]="poney.id" *ngFor="let poney of ponies$ | async">
         {{ poney.name }}
       </mat-option>
     </mat-select>
+    <mat-error *ngIf="raceForm.controls.poneyIds.hasError('required')">
+      This field is required
+    </mat-error>
   </mat-form-field>
 
   <br />
 
-  <button mat-raised-button color="primary">Create</button>
+  <button [disabled]="raceForm.invalid" mat-raised-button color="primary">Create</button>
 
 </form>

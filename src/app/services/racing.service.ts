@@ -34,4 +34,8 @@ export class RacingService {
         return races.find(race => race.id === id)
       }))
   }
+
+  createRace(race: Race) {
+    return this.http.post(`${this.API_URL}/races`, race)
+  }
 }
