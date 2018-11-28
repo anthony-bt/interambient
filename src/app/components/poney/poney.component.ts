@@ -16,6 +16,7 @@ export class PoneyComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+  
     this.run()
 
     this.poneyImg.nativeElement.style.transform = 'scale(1)'

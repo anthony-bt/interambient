@@ -12,6 +12,7 @@ import { FilterPoniesPipe } from './pipes/filter-ponies.pipe';
 import { HomeComponent } from './components/home/home.component';
 import { CreateRaceComponent } from './components/create-race/create-race.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     MaterialModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [
     FilterPoniesPipe

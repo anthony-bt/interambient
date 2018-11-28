@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Race } from 'src/app/interfaces/race';
 import { RacingService } from 'src/app/services/racing.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'amb-home',
@@ -9,12 +10,12 @@ import { RacingService } from 'src/app/services/racing.service';
 })
 export class HomeComponent implements OnInit {
 
-  races: Race[] = []
+  races$: Observable<Race[]>
 
   constructor(private racingService: RacingService) {}
 
   ngOnInit() {
-    this.races = this.racingService.races
+    this.races$ = this.racingService.races
   }
 
 }

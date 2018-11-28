@@ -1,9 +1,11 @@
 <button mat-button color="primary" (click)="listPonies()">List Ponies</button>
 
-<amb-poney
-  (win)="handleWin($event)"
-  [poney]="poney"
-  *ngFor="let poney of ponies | filterPonies:race.poneyIds; let even = even"
-  ambRainbow="#ccc"
-  [isEven]="even"
-></amb-poney>
+<span *ngIf="race">
+  <amb-poney
+    (win)="handleWin($event)"
+    [poney]="poney"
+    *ngFor="let poney of ponies$ | async | filterPonies:race.poneyIds; let even = even"
+    ambRainbow="#ccc"
+    [isEven]="even"
+  ></amb-poney>
+</span>

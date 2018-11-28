@@ -1,9 +1,22 @@
 
 <mat-toolbar color="primary" [class.mat-elevation-z3]="true">
   Welcome to {{ title }}!
+  <button
+    [routerLink]="['/home']"
+    routerLinkActive="router-link-active"
+    mat-button
+  >
+    Home
+  </button>
+  <button
+    [routerLink]="['/create-race']"
+    routerLinkActive="router-link-active"
+    mat-button
+  >
+    Create Race
+  </button>
+
 </mat-toolbar>
 
-<button mat-button>Home</button>
-<button mat-button>Page 2</button>
 
 <router-outlet></router-outlet>
