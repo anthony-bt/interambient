@@ -1,3 +1,24 @@
-<p>
-  create-race works!
-</p>
+
+<form>
+
+  <br />
+
+  <mat-form-field>
+    <input matInput placeholder="Name">
+  </mat-form-field>
+
+  <br />
+
+  <mat-form-field>
+    <mat-select placeholder="Ponies" multiple>
+      <mat-option [value]="poney.id" *ngFor="let poney of ponies$ | async">
+        {{ poney.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br />
+
+  <button mat-raised-button color="primary">Create</button>
+
+</form>

@@ -37,7 +37,7 @@ export class RaceComponent implements OnInit {
   }
 
   listPonies() {
-    console.log(this.filterPoniesPipe.transform(this.ponies, this.race.poneyIds))
+    // console.log(this.filterPoniesPipe.transform(this.ponies, this.race.poneyIds))
   }
 
 }
