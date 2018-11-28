@@ -47,4 +47,8 @@ export class RacingService {
   get races(): Race[] {
     return this._races
   }
+
+  getRaceById(id: number): Race {
+    return this.races.find(race => race.id == id)
+  }
 }

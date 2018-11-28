@@ -1,3 +1,4 @@
+import { routes } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,6 +9,9 @@ import { RainbowDirective } from './directives/rainbow.directive';
 import { MaterialModule } from './modules/material/material.module';
 import { PercentPipe } from './pipes/percent.pipe';
 import { FilterPoniesPipe } from './pipes/filter-ponies.pipe';
+import { HomeComponent } from './components/home/home.component';
+import { CreateRaceComponent } from './components/create-race/create-race.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,11 +20,14 @@ import { FilterPoniesPipe } from './pipes/filter-ponies.pipe';
     RaceComponent,
     RainbowDirective,
     PercentPipe,
-    FilterPoniesPipe
+    FilterPoniesPipe,
+    HomeComponent,
+    CreateRaceComponent
   ],
   imports: [
     BrowserModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     FilterPoniesPipe

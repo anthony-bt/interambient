@@ -1,7 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { Poney } from './interfaces/poney';
-import { Race } from './interfaces/race';
-import { RacingService } from './services/racing.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +7,4 @@ import { RacingService } from './services/racing.service';
 })
 export class AppComponent {
   title = 'Ambient IT';
-
-  races: Race[] = []
-
-  constructor(private racingService: RacingService) {}
-
-  ngOnInit() {
-    this.races = this.racingService.races
-  }
 }

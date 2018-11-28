@@ -3,6 +3,7 @@ import { FilterPoniesPipe } from './../../pipes/filter-ponies.pipe';
 import { Component, OnInit, Input } from '@angular/core';
 import { Poney } from 'src/app/interfaces/poney';
 import { Race } from 'src/app/interfaces/race';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'amb-race',
@@ -11,14 +12,19 @@ import { Race } from 'src/app/interfaces/race';
 })
 export class RaceComponent implements OnInit {
 
-  @Input() race: Race
+  race: Race
 
   constructor(
     private filterPoniesPipe: FilterPoniesPipe,
-    private racingService: RacingService
+    private racingService: RacingService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.race = this.racingService.getRaceById(params.id)
+    })
+
     this.ponies = this.racingService.ponies
   }
 
